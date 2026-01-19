@@ -1,0 +1,54 @@
+/* ==========================
+   Tailwind de base
+========================== */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================
+   Styles globaux personnalisés
+========================== */
+
+/* Smooth background & color transitions for dark mode */
+body {
+  @apply transition-colors duration-300 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100;
+}
+
+/* Scrollbar personnalisée */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-gray-200 dark:bg-gray-700 rounded-full;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-purple-500 dark:bg-purple-400 rounded-full;
+}
+
+/* Limiter le texte dans les cartes */
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+}
+
+/* Boutons transition hover global */
+button {
+  @apply transition-all duration-200;
+}
+
+/* Inputs et textareas */
+input, textarea {
+  @apply focus:outline-none focus:ring-2 focus:ring-purple-400 rounded-md p-2 dark:bg-gray-700 dark:text-gray-100 dark:border-gray-600 border;
+}
+
+/* Liens */
+a {
+  @apply text-purple-600 dark:text-purple-400 hover:underline;
+}
+
+/* Containers max-width pour centrer le contenu */
+.container {
+  @apply max-w-7xl mx-auto px-4;
+}
